@@ -13,13 +13,7 @@
 .clearfix {
   *zoom: 1;
 }
-html {
-  width: 100%;
-  height: 100%;
-}
 body {
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
@@ -30,20 +24,22 @@ body {
   height: 100%;
   max-width: 92em;
   margin: 0 auto;
-  padding: 0 1.875em 3.125em 1.875em;
+  padding: 0 0 3.125em 0;
 }
 #loggedout {
-  height: 100%;
+  position: absolute;
   text-align: center;
   font-size: 20px;
-  padding: 25px;
-
   background-color: #65afed;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66d1ed), color-stop(100%, #658ded)),#65afed;
   background: -webkit-linear-gradient(#66d1ed,#658ded),#65afed;
   background: -moz-linear-gradient(#66d1ed,#658ded),#65afed;
   background: -o-linear-gradient(#66d1ed,#658ded),#65afed;
   background: linear-gradient(#66d1ed,#658ded),#65afed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 #loggedin {
   display: none;
@@ -59,15 +55,17 @@ body {
   background: rgba(255,255,255,0.2);
 }
 h1 {
+  margin: 0;
+  padding: 0;
   font-size: 5em;
-  line-height: 0.5em;
+  line-height: 2em;
   font-family: 'Satisfy', cursive;
-  color: rgba(0, 0, 0, 0.298039);
+  color: white;
 }
 #app {
+  margin-top: 20px;
   max-height: 375px;
   overflow: hidden;
-  margin-bottom: 35px;
 }
 iframe {
   margin-top: 60px;
@@ -77,7 +75,7 @@ iframe {
   margin-top: 33%;
   font-size: 2em;
   font-family: 'Satisfy', cursive;
-  color: rgba(0, 0, 0, 0.298039);
+  color: rgba(108,191,238,1);
 }
 #header {
   position: fixed;
@@ -107,7 +105,7 @@ iframe {
   font-family: 'Satisfy', cursive;
   margin: 15px 0;
   text-decoration: none;
-  color: inherit;
+  color: rgba(108,191,238,1);
 }
 #profile {
   list-style: none;
@@ -131,6 +129,7 @@ iframe {
 }
 #output {
   overflow: hidden;
+  padding: 0 1.875em 3.125em 1.875em;
 }
 .board {
   display: inline-block;

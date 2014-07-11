@@ -8,7 +8,7 @@ var onAuthorize = function() {
     $("#fullName").text(member.fullName);
 
     var $boards = $("<div>")
-      .html("<h2 id='preloader' class='animated pulse'>Loading...</h2>")
+      .html("<h2 id='preloader' class='animated fadeIn'>Loading...</h2>")
       .appendTo("#output");
 
     Trello.get("members/me/boards?filter=starred", { actions: "commentCard", actions_limit: 1000 }, function(boards) {
@@ -34,7 +34,7 @@ var onAuthorize = function() {
 
           var $moment = moment(action.date, moment.ISO_8601);
           var $date = $moment._a[2] + "/" + $moment._a[1] + "/" + _.trim($moment._a[0], "20")
-          var $time = $moment._a[3] + ":" + $moment._a[4]
+          var $time = $moment._a[3] + ":" + _.lpad($moment._a[4], 2, "0")
 
           var $timeSection = $("<time>")
             .attr({datetime: action.date})
