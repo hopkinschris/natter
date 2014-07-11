@@ -5,6 +5,9 @@
 }
 
 @media screen and (max-width: 47.2em) {
+  #app {
+    display: none;
+  }
   #profile > li:first-child {
     display: none;
   }
