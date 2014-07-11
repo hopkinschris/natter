@@ -1,0 +1,45 @@
+@media screen and (max-width: 65.375em) {
+  .board-timeline > li .time span:last-child {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 47.2em) {
+  #profile > li:first-child {
+    display: none;
+  }
+  .board-timeline:before {
+    display: none;
+  }
+  .board-timeline > li .label {
+    margin: 0 0 30px 0;
+    padding: 1em;
+    font-weight: 400;
+    font-size: 95%;
+  }
+  .board-timeline > li .label:after {
+    right: auto;
+    left: 20px;
+    border-right-color: transparent;
+    border-bottom-color: #3594cb;
+    top: -20px;
+  }
+  .board-timeline > li:nth-child(odd) .label:after {
+    border-right-color: transparent;
+    border-bottom-color: #6cbfee;
+  }
+  .board-timeline > li .icon {
+    position: relative;
+    float: right;
+    left: auto;
+    margin: -55px 5px 0 0px;
+  }
+  .board-timeline > li .time {
+    width: 100%;
+    position: relative;
+    padding: 0 0 20px 0;
+  }
+  .board-timeline > li .time span {
+    text-align: left;
+  }
+}
