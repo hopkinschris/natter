@@ -4,6 +4,7 @@ _.mixin(_.str.exports());
 
 (function poll() {
   setTimeout(function() {
+    $("#output").empty();
     fetchBoardData();
     poll();
   }, 120000);
