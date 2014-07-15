@@ -45,6 +45,7 @@ body {
   display: none;
 }
 #connectLink {
+  display: inline-block;
   color: white;
   text-decoration: none;
   border: 2px solid white;
@@ -62,9 +63,13 @@ h1 {
   font-family: 'Satisfy', cursive;
   color: white;
 }
+#version {
+  font-size: 12px;
+  color: #333;
+}
 #app {
   margin-top: 20px;
-  max-height: 375px;
+  max-height: 360px;
   overflow: hidden;
 }
 iframe {
