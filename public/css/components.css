@@ -1,8 +1,12 @@
 .board-timeline {
-  margin: 100px 0 0 0;
+  display: none;
+  margin: 110px 0 0 0;
   padding: 0;
   list-style: none;
   position: relative;
+}
+.board-timeline.active {
+  display: block;
 }
 .board-timeline:before {
   content: '';
@@ -108,4 +112,25 @@
 }
 .board-timeline > li:nth-child(odd) .time span:last-child {
   color: #6cbfee;
+}
+
+#controls {
+  text-align: right;
+  position: relative;
+  top: 130px;
+}
+button {
+  background: none;
+  color: rgba(0, 0, 0, 0.298039);
+  font-size: 14px;
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0.298039);
+  border-radius: 3px;
+  padding: 10px 15px;
+  outline: none;
+  margin: 0 0 10px 10px;
+}
+button.active {
+  color: #3594cb;
+  border-color: #3594cb;
 }

@@ -4,7 +4,7 @@ _.mixin(_.str.exports());
 
 (function poll() {
   setTimeout(function() {
-    $("#output").empty();
+    $("#controls, #output").empty();
     fetchBoardData();
     poll();
   }, 120000);
@@ -31,7 +31,17 @@ var fetchBoardData = function() {
         .text(board.name)
         .appendTo($boards);
 
+      $("<button>")
+        .attr({"data-board": $boardName, "onclick": "showBoard()"})
+        .text(board.name)
+        .appendTo("#controls")
+
       var $boardContainer = $("#" + $boardName).wrap("<ul class='board-timeline'></ul>");
+
+      if(ix === 0) {
+        $boardContainer.parents(".board-timeline").addClass("active");
+        $("button").attr("data-board", $boardName).addClass("active");
+      }
 
       _.each(board.actions, function(action) {
         var $actionContent = $("<li>");
@@ -65,7 +75,7 @@ var fetchBoardData = function() {
 
 var onAuthorize = function() {
   updateLoggedIn();
-  $("#output").empty();
+  $("#controls, #output").empty();
 
   Trello.members.get("me", function(member){
     $("#fullName").text(member.fullName);
@@ -99,3 +109,14 @@ $("#connectLink").click(function(){
 });
 
 $("#disconnect").click(logout);
+
+var showBoard = function() {
+  $("button.active").removeClass("active");
+  $(event.target).addClass("active");
+
+  name = $(event.target).attr("data-board");
+  if($("#" + name).parents(".board-timeline:visible").length === 0) {
+    $(".board-timeline.active").removeClass("active");
+    $("#" + name).parents(".board-timeline").addClass("active");
+  };
+};
