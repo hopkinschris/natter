@@ -3,6 +3,15 @@ Natter
 
 Consolidated chatter from Trello starred boards.
 
+Instructions
+------------
+
+1. Insert your Trello API key and deploy the app to Heroku.
+
+````
+<script src="http://api.trello.com/1/client.js?key=TODO"></script>
+````
+
 Resources
 ---------
 
